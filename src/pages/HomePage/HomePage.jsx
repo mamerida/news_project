@@ -1,13 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useNewsStore } from '../../store/newsStore'
 
 export const HomePage = () => {
-  const news = useNewsStore((state) => state.news)
+  const {news,setNews} = useNewsStore()
 
   return(
     <>
       <div>HomePage</div>
-      <div>{news.length}</div>
     </>
   )
 }
