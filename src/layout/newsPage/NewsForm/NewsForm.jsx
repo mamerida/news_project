@@ -1,10 +1,10 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import { LiaFilterSolid } from "react-icons/lia";
-import { CustomSelect } from '../../../components/CustomSelect/CustomSelect';
-import { CustomInput } from '../../../components/CustomInput/CustomInput';
+import { Select } from '../../../components/Select/Select';
+import { Input } from '../../../components/Input/Input';
+import { Button } from '../../../components/Button/Button';
 import './NewsForm.css';
-import { CustomButton } from '../../../components/CustomButton/CustomButton';
 
 const EVERYTHING_OPTION = "everything"
 const endpointOptions = [
@@ -30,14 +30,14 @@ export const NewsForm = () => {
 
     return (
         <form className='form_container'>
-            <CustomSelect 
+            <Select 
                 options={endpointOptions}
                 name={ENDPOINT_NAME}
                 value={optionsToSeach.endpoint}
                 onChange={handleEndpointSelected}
                 emptyOption={false}
             />
-            <CustomInput
+            <Input
                 type="text"
                 placeholder={"Find your next new!!"}
                 value={optionsToSeach.word}
@@ -45,8 +45,8 @@ export const NewsForm = () => {
                 name="word"
                 icon={<FaSearch />}
             />
-            <CustomButton icon={<LiaFilterSolid />} type="clear" />
-            <CustomButton icon={<FaSearch />} type="secondary"  label="Search"/>
+            <Button icon={<LiaFilterSolid />} type="clear" />
+            <Button icon={<FaSearch />} type="secondary"  label="Search"/>
         </form>
     )
 }

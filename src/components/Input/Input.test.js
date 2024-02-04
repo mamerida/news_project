@@ -1,8 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import { CustomInput } from "./CustomInput";
+import { Input } from "./Input";
 
 
-describe('CustomInput', () => {
+describe('Input', () => {
 
     it('should render an input element with the given props', () => {
       const type = "text";
@@ -14,7 +14,7 @@ describe('CustomInput', () => {
       const icon = <i className="icon" />;
 
       render(
-        <CustomInput
+        <Input
           type={type}
           placeholder={placeholder}
           name={name}
@@ -35,7 +35,7 @@ describe('CustomInput', () => {
 
     it('should call the onChange callback when the input value changes', () => {
       const onChange = jest.fn();
-      render(<CustomInput onChange={onChange} />);
+      render(<Input onChange={onChange} />);
   
       fireEvent.change(screen.getByRole("textbox"), { target: { value: "new value" } });
   
@@ -45,7 +45,7 @@ describe('CustomInput', () => {
 
     it('should execute the onEnter callback when the Enter key is pressed', () => {
       const onEnter = jest.fn();
-      render(<CustomInput onEnter={onEnter} />);
+      render(<Input onEnter={onEnter} />);
   
       fireEvent.keyDown(screen.getByRole("textbox"), { key: "Enter" });
 

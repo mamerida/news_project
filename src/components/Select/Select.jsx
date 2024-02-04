@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import "./CustomSelect.css"
+import "./Select.css"
 
 const defaultEmptyOption = [{value:"", label:""}];
 
@@ -14,7 +14,7 @@ const defaultEmptyOption = [{value:"", label:""}];
  * @callback onChange - action to execute when a option is selected.
  * @param {boolean=true} emptyOption - that prop add a empty option in the select .
  */
-export const CustomSelect = ({options = [], name, value, onChange, emptyOption=true}) => {
+export const Select = ({options = [], name, value, onChange, emptyOption=true}) => {
     const [optionsSelect, setOptionsSelect] = useState(options)
 
     useEffect(()=>{

@@ -1,5 +1,5 @@
 import React from 'react';
-import './CustomInput.css';
+import './Input.css';
 
 const ENTER_KEY = "Enter"
 
@@ -14,7 +14,7 @@ const ENTER_KEY = "Enter"
  * @param {JSX.Element} icon - If you want you can show an icon betwen de text .
  * @param {Object} props - If you want pass another prop .
  */
-export const CustomInput = ({type="text", placeholder, name, value, onChange, onEnter = null, icon, ...props}) => {
+export const Input = ({type="text", placeholder, name, value, onChange, onEnter = null, icon, ...props}) => {
 
     const handleKeyDown = (e) => {
         if(e.key === ENTER_KEY){

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
-import { CustomSelect } from "./CustomSelect";
+import { Select } from "./Select";
 
-describe('CustomSelect', () => {
+describe('Select', () => {
 
   it('should render select element with options', () => {
     const options = [
@@ -12,7 +12,7 @@ describe('CustomSelect', () => {
     const name = "testSelect";
     const value = "2";
     const onChange = jest.fn();
-    render(<CustomSelect options={options} name={name} value={value} onChange={onChange} />);
+    render(<Select options={options} name={name} value={value} onChange={onChange} />);
     const selectElement = screen.getByRole("combobox");
     expect(selectElement).toBeInTheDocument();
     expect(selectElement).toHaveValue("2");
