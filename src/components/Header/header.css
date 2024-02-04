@@ -1,0 +1,20 @@
+.header{
+    background-color: var(--backgroundColor);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap:10px;
+}
+
+.header .header_logo {
+    height: 80px;
+    width: 80px;
+}
+.header .header_logo:hover {
+    cursor: pointer;
+}
+
+.header .header_title{
+    color: var(--primaryTextColor);
+}

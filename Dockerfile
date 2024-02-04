@@ -11,6 +11,7 @@ RUN npm install
 # Copy the entire application code to the container
 COPY . .
 
+# Get env variable for command
 ARG VITE_API_KEY
 ENV VITE_API_KEY=$VITE_API_KEY
 
