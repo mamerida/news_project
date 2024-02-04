@@ -1,0 +1,32 @@
+.header{
+    background-color: var(--primaryBackgroundColor);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.header .header_logo_container{
+    display: flex;
+    flex-direction: row;
+}
+
+.header .header_logo_container .header_logo {
+    height: 80px;
+    width: 80px;
+}
+.header .header_logo_container .header_logo:hover {
+    cursor: pointer;
+}
+
+.header .header_logo_container .header_title{
+    color: var(--primaryTextColor);
+}
+
+@media (width < 700px) {
+    .header .header_logo_container .header_title{
+        display: none;
+    }
+}
+
