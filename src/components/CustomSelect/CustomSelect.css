@@ -2,13 +2,7 @@
     appearance: none;
     /*  safari  */
     -webkit-appearance: none;
-    font-size: 1rem;
-    padding: 0.5em 1em 0.5em 0.5em;
     background-color: var(--backgroundColor);
-    border: 1px solid var(--primaryBorderColor);
-    border-radius: 0.25rem;
-    color: var(--primaryTextColor);
-    cursor: pointer;
       /* Arrow */
     appearance: none;
     background-image: var(--arrowUrl);
