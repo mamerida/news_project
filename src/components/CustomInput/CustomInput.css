@@ -1,16 +1,16 @@
-.input_container {
-    display: flex;
-    align-items: center;
-    background-color: var(--secondaryBackgroundColor);
-}
 
-.input_container .input_icon {
+.icons {
     font-size: 1rem;
     color: var(--secondaryTextColor);
     height: 15px;
     margin: 0 3px 3px 0;
 }
 
+.input_container {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondaryBackgroundColor);
+}
 
 .input_container input{
     border: none;

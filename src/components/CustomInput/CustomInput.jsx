@@ -26,7 +26,7 @@ export const CustomInput = ({type="text", placeholder, name, value, onChange, on
     return (
     <div className='inputs input_container'>
         {icon &&
-            <div className="input_icon">
+            <div className="icons">
                 {icon}
             </div>
         }
