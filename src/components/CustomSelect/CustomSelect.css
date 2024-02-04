@@ -1,0 +1,19 @@
+.custom_select {
+    appearance: none;
+    /*  safari  */
+    -webkit-appearance: none;
+    font-size: 1rem;
+    padding: 0.5em 1em 0.5em 0.5em;
+    background-color: var(--backgroundColor);
+    border: 1px solid var(--primaryBorderColor);
+    border-radius: 0.25rem;
+    color: var(--primaryTextColor);
+    cursor: pointer;
+      /* Arrow */
+    appearance: none;
+    background-image: var(--arrowUrl);
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 0.65rem auto;
+    color: var(--primaryTextColor);
+}
