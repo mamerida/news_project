@@ -23,7 +23,7 @@ export const CustomSelect = ({options = [], name, value, onChange, emptyOption=t
 
     return (
     <>
-        <select name={name} onChange={onChange} value={value} className={"custom_select"}>
+        <select name={name} onChange={onChange} value={value} className="inputs custom_select">
             {optionsSelect.map((opt)=>{
                 return <option key={opt.value} value={opt.value}>{opt.label}</option>
             })}

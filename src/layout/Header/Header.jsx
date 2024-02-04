@@ -1,7 +1,9 @@
 import React, { useCallback, useState } from 'react';
 import newsPaperlogo from '../../../public/newsPaper.svg';
 import './header.css';
-import { CustomSelect } from '../CustomSelect/CustomSelect';
+import { CustomSelect } from '../../components/CustomSelect/CustomSelect';
+import { CustomInput } from '../../components/CustomInput/CustomInput';
+import { FaSearch } from "react-icons/fa";
 
 const endpointOptions = [
     {value:"everything", label:"Everything"},
@@ -18,6 +20,12 @@ export const Header = () => {
         })
     },[])
 
+    const handleChangeWord = useCallback((option)=>{
+        setOptionsToSeach((current)=>{
+            return {...current, word:option.target.value}
+        })
+    },[])
+
     return (
         <header className='header'>
             <img src={newsPaperlogo} alt='logo' className='header_logo'/>
@@ -29,6 +37,13 @@ export const Header = () => {
                     value={optionsToSeach.endpoint}
                     onChange={handleEndpointSelected}
                     emptyOption={false}
+                />
+                <CustomInput
+                    type="text"
+                    placeholder={"Find your next new!!"}
+                    value={optionsToSeach.word}
+                    onChange={handleChangeWord}
+                    name="word"
                 />
             </form>
         </header>

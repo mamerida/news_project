@@ -1,0 +1,25 @@
+.input_container {
+    display: flex;
+    align-items: center;
+    background-color: var(--secondaryBackgroundColor);
+}
+
+.input_container .input_icon {
+    font-size: 1rem;
+    color: var(--secondaryTextColor);
+    height: 15px;
+    margin: 0 3px 3px 0;
+}
+
+
+.input_container input{
+    border: none;
+    box-shadow: none;
+    outline: none;
+    background: transparent;
+}
+
+.input_container input::placeholder {
+    font-weight: lighter;
+    color: var(--secondaryTextColor);
+}
