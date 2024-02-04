@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import './CustomButton.css';
+import './Button.css';
 
 
 /**
@@ -11,7 +11,7 @@ import './CustomButton.css';
  * @param {type=primary|secondary|clear} type - indicates type of button and change css.
  */
 
-export const CustomButton = ({icon, label, onClick, disabled=false, type="primary" }) => {
+export const Button = ({icon, label, onClick, disabled=false, type="primary" }) => {
 
     const handleClick = useCallback((e)=>{
         e.preventDefault();

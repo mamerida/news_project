@@ -17,7 +17,7 @@ body{
 .inputs{
     font-size: 1rem;
     padding: 0.5em 1em 0.5em 0.5em;
-    border: 1px solid var(--primaryBorderColor);
+    border: none;
     border-radius: 0.25rem;
     color: var(--primaryTextColor);
     cursor: pointer;
