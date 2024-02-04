@@ -15,7 +15,7 @@ body{
 
 
 .inputs{
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: 0.5em 1em 0.5em 0.5em;
     border: none;
     border-radius: 0.25rem;
@@ -23,3 +23,17 @@ body{
     cursor: pointer;
 }
 
+/* Change autocomplete styles in WebKit */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: var(--primaryTextColor);
+  -webkit-box-shadow: 0 0 0px 1000px var(--primaryBackgroundColor) inset;
+}
