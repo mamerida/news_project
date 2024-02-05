@@ -1,6 +1,5 @@
 import React from 'react';
-import newsPaperlogo from '../../../../public/newsPaper.svg';
-import { NewsForm } from '../NewsForm/NewsForm';
+import newsPaperlogo from '../../assets/newsPaper.svg';
 import './Header.css';
 
 

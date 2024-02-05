@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useNewsStore } from '../../store/newsStore'
-import { Header } from '../../layout/newsPage/Header/Header'
 import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm'
+import { Header } from '../../layout/Header/Header'
 
 export const HomePage = () => {
   const {news,setNews} = useNewsStore()
