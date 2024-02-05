@@ -3,8 +3,10 @@
     width: 100%;
     display: flex;
     align-items: center;
+    flex-flow: wrap;
     padding: 10px;
     gap: 20px;
+    overflow-x: hidden;
 }
 
 .header .header_logo_container{
@@ -22,11 +24,5 @@
 
 .header .header_logo_container .header_title{
     color: var(--primaryTextColor);
-}
-
-@media (width < 700px) {
-    .header .header_logo_container .header_title{
-        display: none;
-    }
 }
 
