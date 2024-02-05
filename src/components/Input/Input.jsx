@@ -25,24 +25,24 @@ export const Input = ({type="text", placeholder, label, name, value, onChange, o
     }
 
     return (
-    <>
-    {label && <label className='select_label'>{label}</label>}
-    <div className='inputs input_container'>
-        {icon &&
-            <div className="icons">
-                {icon}
-            </div>
-        }
-        <input
-            type={type}
-            placeholder={placeholder}
-            value={value}
-            onChange={onChange}
-            name={name}
-            onKeyDown={handleKeyDown}
-            {...props}
-        />
+    <div className='input_wrapper'>
+        {label && <label className='select_label'>{label}</label>}
+        <div className='inputs input_container'>
+            {icon &&
+                <div className="icons">
+                    {icon}
+                </div>
+            }
+            <input
+                type={type}
+                placeholder={placeholder}
+                value={value}
+                onChange={onChange}
+                name={name}
+                onKeyDown={handleKeyDown}
+                {...props}
+            />
+        </div>
     </div>
-    </>
     )
 }

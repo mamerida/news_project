@@ -37,3 +37,7 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: var(--primaryTextColor);
   -webkit-box-shadow: 0 0 0px 1000px var(--primaryBackgroundColor) inset;
 }
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); 
+}
