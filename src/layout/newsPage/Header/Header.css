@@ -1,12 +1,13 @@
 .header{
     background-color: var(--primaryBackgroundColor);
     width: 100%;
+    position: sticky;
     display: flex;
     align-items: center;
     flex-flow: wrap;
     padding: 10px;
     gap: 20px;
-    overflow-x: hidden;
+    top:0;
 }
 
 .header .header_logo_container{

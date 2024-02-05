@@ -1,14 +1,101 @@
 import React, { useEffect } from 'react'
 import { useNewsStore } from '../../store/newsStore'
 import { Header } from '../../layout/newsPage/Header/Header'
+import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm'
 
 export const HomePage = () => {
   const {news,setNews} = useNewsStore()
 
   return(
     <>
-      <Header/>
-      <div>HomePage</div>
+        <Header>
+          <NewsForm/>
+        </Header>
+      <div>
+        <div>HomePage</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+        <div>aaaa</div>
+      </div>
     </>
   )
 }

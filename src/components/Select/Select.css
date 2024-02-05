@@ -2,12 +2,28 @@
     appearance: none;
     /*  safari  */
     -webkit-appearance: none;
+    margin: 10px 0;
     background-color: var(--backgroundColor);
-      /* Arrow */
+}
+
+.select_single{
+    /* Arrow */
     appearance: none;
     background-image: var(--arrowUrl);
     background-repeat: no-repeat;
     background-position: right 0.7rem top 50%;
     background-size: 0.65rem auto;
     color: var(--primaryTextColor);
+}
+
+.select_multi{
+  min-height: 200px;
+  color: black !important;
+  background-color: var(--secondaryBackgroundColor);
+}
+
+.select_label{
+  font-size: 1rem;
+  margin-right: 20px;
+  color: var(--primaryTextColor)
 }

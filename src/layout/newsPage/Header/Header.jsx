@@ -4,7 +4,7 @@ import { NewsForm } from '../NewsForm/NewsForm';
 import './Header.css';
 
 
-export const Header = () => {
+export const Header = ({children}) => {
 
     return (
         <header className='header'>
@@ -13,7 +13,7 @@ export const Header = () => {
                 <h1 className='header_title'>What's New?</h1>
             </div>
             <div className='header_form_container'>
-                <NewsForm/>
+                {children}
             </div>
         </header>
     )
