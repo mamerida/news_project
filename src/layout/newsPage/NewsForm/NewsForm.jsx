@@ -30,13 +30,13 @@ export const NewsForm = () => {
 
     return (
         <form className='form_container'>
-            <Select 
+            {/* <Select 
                 options={endpointOptions}
                 name={ENDPOINT_NAME}
                 value={optionsToSeach.endpoint}
                 onChange={handleEndpointSelected}
                 emptyOption={false}
-            />
+            /> */}
             <Input
                 type="text"
                 placeholder={"Find your next new!!"}
