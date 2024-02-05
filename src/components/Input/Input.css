@@ -10,6 +10,11 @@
     display: flex;
     align-items: center;
 }
+.select_label{
+    font-size: 1rem;
+    margin-right: 20px;
+    color: var(--primaryTextColor)
+}
 
 .input_container input{
     border: none;

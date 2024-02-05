@@ -27,9 +27,16 @@
     background-color:var(--primaryButtonColorHover);
 }
 
+.btn_primary:disabled {
+    transition: background-color 0.5s ease;
+    background-color:var(--primaryButtonColorDisabled);
+    cursor: auto;
+}
+
+
 .btn_secondary {
     background-color: var(--secondaryButtonColor);
-    color: var(--secondaryTextColor);
+    color: black;
 }
 
 .btn_secondary:hover {

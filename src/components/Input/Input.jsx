@@ -7,6 +7,7 @@ const ENTER_KEY = "Enter"
  * Select to the platform.
  * @param {string="text"} type - Type of input. number, text, password, mail, etc.
  * @param {string} placeholder - input placeholder.
+ * @param {string} label - label to show on input.
  * @param {string} name - name to form manager.
  * @param {string} value - value to form manager.
  * @callback onChange - action to execute when write in input.
@@ -14,7 +15,7 @@ const ENTER_KEY = "Enter"
  * @param {JSX.Element} icon - If you want you can show an icon betwen de text .
  * @param {Object} props - If you want pass another prop .
  */
-export const Input = ({type="text", placeholder, name, value, onChange, onEnter = null, icon, ...props}) => {
+export const Input = ({type="text", placeholder, label, name, value, onChange, onEnter = null, icon, ...props}) => {
 
     const handleKeyDown = (e) => {
         if(e.key === ENTER_KEY){
@@ -24,6 +25,8 @@ export const Input = ({type="text", placeholder, name, value, onChange, onEnter 
     }
 
     return (
+    <>
+    {label && <label className='select_label'>{label}</label>}
     <div className='inputs input_container'>
         {icon &&
             <div className="icons">
@@ -40,5 +43,6 @@ export const Input = ({type="text", placeholder, name, value, onChange, onEnter 
             {...props}
         />
     </div>
+    </>
     )
 }
