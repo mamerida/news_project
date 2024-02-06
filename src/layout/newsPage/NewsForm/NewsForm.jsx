@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { FaSearch } from "react-icons/fa";
 import { LiaFilterSolid } from "react-icons/lia";
 import { FaFilter } from "react-icons/fa";
@@ -7,12 +7,16 @@ import { Button } from '../../../components/Button/Button';
 import { 
     CATEGORY,
     COUNTRY,
+    ERROR_MESSAGE,
     INITIAL_STATE, 
     LANGUAGE,  
     TEXT_SEARCH, 
 } from '../constansts';
 import './NewsForm.css';
 import { FilterMenu } from '../FilterMenu/FilterMenu';
+import { Api } from '../../../utils/newsApi/calls';
+import { useNewsStore } from '../../../store/newsStore'
+import { useIsLoadingStore } from '../../../store/isLoading';
 
 
 export const NewsForm = () => {
@@ -24,7 +28,8 @@ export const NewsForm = () => {
     const [temporalFilters, setTemporalFilters] = useState({})
     //manage show and hide filter menu
     const [openFilters, setOpenFilters] = useState(false);
-
+    const {setNews} = useNewsStore()
+    const {setIsLoading} = useIsLoadingStore()
 
     const handleShowfilters = () =>{
         setOpenFilters((current)=>!current)
@@ -63,9 +68,21 @@ export const NewsForm = () => {
     },[setTemporalFilters, setOptionsToSeach, setFilterAreAplicated])
 
 
+
     const submitForm = useCallback(()=>{
-        console.log(optionsToSeach)
-    },[optionsToSeach])
+        setIsLoading(true);
+        Api.getNews(optionsToSeach).then(res=>{
+            setNews(res)
+        }).catch(()=>{
+            window.alert(ERROR_MESSAGE)
+        }).finally(()=>{
+            setIsLoading(false);
+        })
+    },[optionsToSeach, setNews])
+
+    useEffect(()=>{
+        submitForm();
+    },[])
 
     return (
         <form className='form_container'>

@@ -1,100 +1,27 @@
 import React, { useEffect } from 'react'
-import { useNewsStore } from '../../store/newsStore'
 import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm'
 import { Header } from '../../layout/Header/Header'
+import { useNewsStore } from '../../store/newsStore';
+import { useIsLoadingStore } from '../../store/isLoading';
 
 export const HomePage = () => {
-  const {news,setNews} = useNewsStore()
-
+  const { news } = useNewsStore();
+  const { isLoading } = useIsLoadingStore();
   return(
     <>
         <Header>
           <NewsForm/>
         </Header>
       <div>
+        
         <div>HomePage</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
-        <div>aaaa</div>
+        {isLoading ? <div>CARGANDO</div> : 
+          <>
+          {news && news.map((nw)=>{
+            return <span>{nw.title}</span>
+          })}
+          </>
+      }
       </div>
     </>
   )
