@@ -1,8 +1,6 @@
 .card_container{
-    flex-wrap: wrap;
-    align-items: stretch;
     color: var(--primaryTextColor);
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.5rem;
 }
 
 .card_container:hover {
@@ -14,7 +12,6 @@
   
 
 .card_container .card{
-    width: 350px;
     background-color: var(--primaryBackgroundColor);
     border-radius: 10px;
     overflow: hidden;
