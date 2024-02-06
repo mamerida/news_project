@@ -16,7 +16,7 @@ import { EverythingParams, FiltersForm, TopParams } from "./Interface"
 
 const BASE_URL = "https://newsapi.org/v2/"
 //@ts-ignore
-const API_KEY_URL= `?apikey=${import.meta.env.VITE_API_KEY}`
+const API_KEY_URL= `?apikey=${process.env.VITE_API_KEY}`
 const METHOD_GET = "GET"
 
 
