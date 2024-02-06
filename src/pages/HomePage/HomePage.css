@@ -2,7 +2,7 @@
     overflow-x: hidden;
 }
 .home_page .card_list_container{
-    margin: 10px;
+    margin: 0.5rem;
     columns: 5 340px;
-    column-gap: 0.7rem;
+    column-gap: 0.5rem;
 }
