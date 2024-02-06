@@ -1,0 +1,8 @@
+.home_page{
+    overflow-x: hidden;
+}
+.home_page .card_list_container{
+    margin: 10px;
+    columns: 5 340px;
+    column-gap: 0.7rem;
+}
