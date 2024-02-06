@@ -3,26 +3,28 @@ import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm'
 import { Header } from '../../layout/Header/Header'
 import { useNewsStore } from '../../store/newsStore';
 import { useIsLoadingStore } from '../../store/isLoading';
+import { Card } from '../../components/Card/Card';
+import './HomePage.css';
 
 export const HomePage = () => {
   const { news } = useNewsStore();
   const { isLoading } = useIsLoadingStore();
   return(
     <>
-        <Header>
-          <NewsForm/>
-        </Header>
-      <div>
-        
-        <div>HomePage</div>
-        {isLoading ? <div>CARGANDO</div> : 
-          <>
-          {news && news.map((nw)=>{
-            return <span>{nw.title}</span>
-          })}
-          </>
-      }
-      </div>
+      <Header>
+        <NewsForm/>
+      </Header>
+      <section className='home_page'>
+          <section className='card_list_container'>
+          {isLoading ? <div>CARGANDO</div> :
+            <>
+              {news && news.map((nw)=>{
+                return <Card key={nw.title + nw.publishedAt} title={nw.title} author={nw.author} urlImage={nw.urlToImage} description={nw.description}/>
+              })}
+            </> 
+          }
+          </section>
+      </section>
     </>
   )
 }
