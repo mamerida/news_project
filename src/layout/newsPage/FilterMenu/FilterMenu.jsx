@@ -64,102 +64,104 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
     return (
       <section className='filters'>
           <div className='filter_section'>
-            <div className='title_container'>
-              <h2>Filters</h2>
-              <Button
-                icon={<GiCancel/>}
-                type="clear"
-                onClick={onCancel}            
-              />
-            </div>
-            <div className='filter_container'>
-            <Select
-                label="Section where search"
-                options={ENDPOINT_OPTION}
-                value={values.endpoint}
-                onChange={(e)=>handleChangeValue(e,ENDPOINT_T0_SEARCH)}
-            />
-            {values[ENDPOINT_T0_SEARCH] === EVERYTHING_OPTION ?
-                <>
-                    <Select
-                        label="Sort By"
-                        options={SHORT_BY_OPTIONS}
-                        name={SORT_BY}
-                        emptyOption
-                        value={values[SORT_BY]}
-                        onChange={(e)=>handleChangeValue(e,SORT_BY)}
-                    />
-                    <Input
-                        label="Domains separate by ,"
-                        placeholder="google.com,yahoo.com"
-                        value={values[DOMAINS]}
-                        onChange={(e)=>handleChangeValue(e,DOMAINS)}
-                    />
-                    <Input
-                        label="Exclude domains separate by ,"
-                        placeholder="google.com,yahoo.com"
-                        value={values[EXCLUDE_DOMAINS]}
-                        onChange={(e)=>handleChangeValue(e,EXCLUDE_DOMAINS)}
-                    />
-                    <Input
-                        label="From"
-                        type="date"
-                        min={DATE_LIMIT}
-                        value={values[FROM_DATE]}
-                        max={values[TO_DATE]}
-                        onChange={(e)=>handleChangeValue(e,FROM_DATE)}
-                    />
-                    <Input
-                        label="To"
-                        type="date"
-                        min={values[FROM_DATE]}
-                        value={values[TO_DATE]}
-                        onChange={(e)=>handleChangeValue(e,TO_DATE)}
-                    />
-                    <Select
-                        label="Select language"
-                        multiple
-                        name={LANGUAGE}
-                        options={LANGUAGE_OPTION}
-                        value={values[LANGUAGE]}
-                        onChange={(e)=>{manageMultiSelect(e.target.value,LANGUAGE)}}
-                    />
-                </>
-                :
-                <>
-                    <Select
-                        label="Select Category"
-                        multiple
-                        options={CATEGORY_OPTIONS}
-                        name={CATEGORY}
-                        value={values[CATEGORY]}
-                        onChange={(e)=>manageMultiSelect(e.target.value,CATEGORY)}
-                    />
-                    <Select
-                        label="Select Country"
-                        multiple
-                        options={COUNTRY_OPTIONS}
-                        value={values[COUNTRY]}
-                        onChange={(e)=>manageMultiSelect(e.target.value,COUNTRY)}
-                    />
-                </>
-            }
+            <form className="filters_form">
+                <div className='title_container'>
+                <h2>Filters</h2>
+                <Button
+                    icon={<GiCancel/>}
+                    type="clear"
+                    onClick={onCancel}            
+                />
+                </div>
+                <div className='filter_container'>
+                <Select
+                    label="Section where search"
+                    options={ENDPOINT_OPTION}
+                    value={values.endpoint}
+                    onChange={(e)=>handleChangeValue(e,ENDPOINT_T0_SEARCH)}
+                />
+                {values[ENDPOINT_T0_SEARCH] === EVERYTHING_OPTION ?
+                    <>
+                        <Select
+                            label="Sort By"
+                            options={SHORT_BY_OPTIONS}
+                            name={SORT_BY}
+                            emptyOption
+                            value={values[SORT_BY]}
+                            onChange={(e)=>handleChangeValue(e,SORT_BY)}
+                        />
+                        <Input
+                            label="Domains separate by ,"
+                            placeholder="google.com,yahoo.com"
+                            value={values[DOMAINS]}
+                            onChange={(e)=>handleChangeValue(e,DOMAINS)}
+                        />
+                        <Input
+                            label="Exclude domains separate by ,"
+                            placeholder="google.com,yahoo.com"
+                            value={values[EXCLUDE_DOMAINS]}
+                            onChange={(e)=>handleChangeValue(e,EXCLUDE_DOMAINS)}
+                        />
+                        <Input
+                            label="From"
+                            type="date"
+                            min={DATE_LIMIT}
+                            value={values[FROM_DATE]}
+                            max={values[TO_DATE]}
+                            onChange={(e)=>handleChangeValue(e,FROM_DATE)}
+                        />
+                        <Input
+                            label="To"
+                            type="date"
+                            min={values[FROM_DATE]}
+                            value={values[TO_DATE]}
+                            onChange={(e)=>handleChangeValue(e,TO_DATE)}
+                        />
+                        <Select
+                            label="Select language"
+                            multiple
+                            name={LANGUAGE}
+                            options={LANGUAGE_OPTION}
+                            value={values[LANGUAGE]}
+                            onChange={(e)=>{manageMultiSelect(e.target.value,LANGUAGE)}}
+                        />
+                    </>
+                    :
+                    <>
+                        <Select
+                            label="Select Category"
+                            multiple
+                            options={CATEGORY_OPTIONS}
+                            name={CATEGORY}
+                            value={values[CATEGORY]}
+                            onChange={(e)=>manageMultiSelect(e.target.value,CATEGORY)}
+                        />
+                        <Select
+                            label="Select Country"
+                            multiple
+                            options={COUNTRY_OPTIONS}
+                            value={values[COUNTRY]}
+                            onChange={(e)=>manageMultiSelect(e.target.value,COUNTRY)}
+                        />
+                    </>
+                }
 
-            <div className='button_container'>
-                <Button
-                    type="primary"
-                    icon={<TbFilterSearch />}
-                    onClick={onSubmit}
-                    label="Apply filters"
-                />
-                <Button
-                    type="secondary"
-                    icon={<TfiBrushAlt />}
-                    onClick={onClear}
-                    label="Clear filters"
-                />
-            </div>
-            </div>
+                    <div className='button_container'>
+                        <Button
+                            type="primary"
+                            icon={<TbFilterSearch />}
+                            onClick={onSubmit}
+                            label="Apply filters"
+                        />
+                        <Button
+                            type="secondary"
+                            icon={<TfiBrushAlt />}
+                            onClick={onClear}
+                            label="Clear filters"
+                        />
+                    </div>
+                </div>
+            </form>
           </div>
       </section>
     )
