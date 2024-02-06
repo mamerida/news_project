@@ -10,8 +10,8 @@ export const CATEGORY_OPTIONS = [
 ]
 export const COUNTRY = "country"
 export const COUNTRY_OPTIONS = [
-    {label : "Ae", value:"ae"},
-    {label : "Ar", value:"ar"},
+    {label : "Ae",value:"ae"},
+    {label : "Ar",value:"ar"},
     {label : "At",value:"at"},
     {label : "Au",value:"au"},
     {label : "Be",value:"be"},
@@ -65,14 +65,17 @@ export const COUNTRY_OPTIONS = [
     {label : "Ve",value:"ve"},
     {label : "Za",value:"za"},
 ]
+export const DATE_LIMIT = "2024-01-04"
 export const DOMAINS = "domains"
 export const ENDPOINT_T0_SEARCH = "endpoint"
 export const EVERYTHING_OPTION = "everything"
+export const ERROR_MESSAGE = "Error getting news"
 export const EXCLUDE_DOMAINS = "excludeDomains"
 export const FROM_DATE = "from"
+export const REACT_SHOW = "react"
 export const INITIAL_STATE = {
     endpoint:EVERYTHING_OPTION ,
-    q:"",
+    q:REACT_SHOW,
     excludeDomains:"",
     domains:"",
     excludeDomains:"",
@@ -100,7 +103,7 @@ export const LANGUAGE_OPTION = [
     {label : "Ud",value:"ud"},
     {label : "Zh",value:"zh"},
 ]
-export const SHORT_BE_OPTIONS = [
+export const SHORT_BY_OPTIONS = [
     {label : "Relevancy", value:"relevancy"},
     {label : "Popularity",value:"popularity"},
     {label : "Published at",value:"publishedAt"},
@@ -110,6 +113,8 @@ export const TO_DATE= "to"
 export const TOP_HEAD_OPTION = "top-headlines"
 export const ENDPOINT_OPTION = [{label : "Everythig",value:EVERYTHING_OPTION},{label : "Top headlines",value:TOP_HEAD_OPTION}]
 export const TEXT_SEARCH = "q"
+
+
 
 
 

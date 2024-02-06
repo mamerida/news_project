@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import "./Select.css"
 
-const defaultEmptyOption = [{value:"", label:""}];
+const defaultEmptyOption = [{value:"", label:"Select an option please"}];
 
 
 /**
@@ -17,11 +17,6 @@ const defaultEmptyOption = [{value:"", label:""}];
  * @param {boolean=true} emptyOption - that prop add a empty option in the select .
  */
 export const Select = ({options = [],label = "", name, value, onChange, multiple=false, emptyOption=false}) => {
-    const [optionsSelect, setOptionsSelect] = useState(options)
-
-    useEffect(()=>{
-        if(emptyOption) setOptionsSelect([...defaultEmptyOption,...options])
-    },[options,emptyOption])
 
     return (
     <>  
@@ -32,8 +27,9 @@ export const Select = ({options = [],label = "", name, value, onChange, multiple
             value={value} 
             className={`inputs custom_select ${multiple ? "select_multi" :"select_single"}`}
             multiple={multiple}
-        >
-            {optionsSelect.map((opt)=>{
+        >   
+            {emptyOption && <option value={""}>Select an option please</option> }
+            {options.map((opt)=>{
                 return <option key={opt.value} value={opt.value}>{opt.label}</option>
             })}
         </select>

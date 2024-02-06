@@ -10,6 +10,7 @@ import {
     CATEGORY_OPTIONS, 
     COUNTRY, 
     COUNTRY_OPTIONS, 
+    DATE_LIMIT, 
     DOMAINS, 
     ENDPOINT_OPTION, 
     ENDPOINT_T0_SEARCH, 
@@ -18,7 +19,7 @@ import {
     FROM_DATE, 
     LANGUAGE, 
     LANGUAGE_OPTION, 
-    SHORT_BE_OPTIONS, 
+    SHORT_BY_OPTIONS, 
     SORT_BY, 
     TO_DATE 
 } from "../constansts";
@@ -82,9 +83,10 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                 <>
                     <Select
                         label="Sort By"
-                        options={SHORT_BE_OPTIONS}
-                        value={values[SORT_BY]}
+                        options={SHORT_BY_OPTIONS}
+                        name={SORT_BY}
                         emptyOption
+                        value={values[SORT_BY]}
                         onChange={(e)=>handleChangeValue(e,SORT_BY)}
                     />
                     <Input
@@ -102,6 +104,7 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                     <Input
                         label="From"
                         type="date"
+                        min={DATE_LIMIT}
                         value={values[FROM_DATE]}
                         max={values[TO_DATE]}
                         onChange={(e)=>handleChangeValue(e,FROM_DATE)}
@@ -116,6 +119,7 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                     <Select
                         label="Select language"
                         multiple
+                        name={LANGUAGE}
                         options={LANGUAGE_OPTION}
                         value={values[LANGUAGE]}
                         onChange={(e)=>{manageMultiSelect(e.target.value,LANGUAGE)}}
@@ -124,14 +128,15 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                 :
                 <>
                     <Select
-                        label="Select Categories"
+                        label="Select Category"
                         multiple
                         options={CATEGORY_OPTIONS}
+                        name={CATEGORY}
                         value={values[CATEGORY]}
                         onChange={(e)=>manageMultiSelect(e.target.value,CATEGORY)}
                     />
                     <Select
-                        label="Select country"
+                        label="Select Country"
                         multiple
                         options={COUNTRY_OPTIONS}
                         value={values[COUNTRY]}
