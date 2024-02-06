@@ -21,7 +21,6 @@ const METHOD_GET = "GET"
 
 
 const callApi = async(url:string ,method:string) =>{
-    console.log(url)
     return fetch(url,{method: method})
     .then(res=>res.json())
     .then(res=> res && (res.articles))
@@ -69,11 +68,6 @@ const getNews = (form:FiltersForm) =>{
             })
     }else{
         callUrl +=  TOP_HEAD_OPTION+ API_KEY_URL
-        console.log({
-            [TEXT_SEARCH]:form[TEXT_SEARCH],
-            [COUNTRY]:form[COUNTRY],
-            [CATEGORY]:form[CATEGORY],
-        })
         urlWithParams = buildURL(
             callUrl,
             {
