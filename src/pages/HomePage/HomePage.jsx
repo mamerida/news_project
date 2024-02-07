@@ -20,7 +20,13 @@ export const HomePage = () => {
           {isLoading ? <div>CARGANDO</div> :
             <>
               {news && news.map((nw)=>{
-                return <Card key={nw.title + nw.publishedAt} title={nw.title} author={nw.author} urlImage={nw.urlToImage} description={nw.description}/>
+                return <Card 
+                          key={nw.title +"&"+ nw.publishedAt +"&"+nw.author} 
+                          title={nw.title} 
+                          author={nw.author} 
+                          urlImage={nw.urlToImage} 
+                          description={nw.description}
+                          />
               })}
             </> 
           }

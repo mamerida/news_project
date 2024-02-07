@@ -1,9 +1,8 @@
 import React from 'react';
 import './Card.css';
-import { Button } from '../Button/Button';
+import notAvalilableImage from '../../assets/image-not-available.svg';
 
 const AUTHOR_NOT_AVAILABLE = "Author not available"
-const IMAGE_BACKUP_URL = "https://placehold.co/330x220"
 
 export const Card = ({title, author, urlImage, description}) => {
   return (
@@ -11,7 +10,7 @@ export const Card = ({title, author, urlImage, description}) => {
       <div className='card'>
         <header className='card_header'>
           <img
-            src={urlImage || IMAGE_BACKUP_URL}
+            src={urlImage || notAvalilableImage}
             alt='card_cover'
           />
         </header>
