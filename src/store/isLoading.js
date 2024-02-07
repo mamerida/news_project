@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
 export const useIsLoadingStore = create((set) => ({
-  isLoading: true,
+  isLoading: false,
   setIsLoading: (isLoad) => set((state) => ({ isLoading:isLoad})),
 }))
