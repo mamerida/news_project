@@ -10,12 +10,13 @@ import { Spinner } from '../../components/Spinner/Spinner';
 
 
 export const HomePage = () => {
-  const { news } = useNewsStore();
+  const { news, setSelectedNews } = useNewsStore();
   const { isLoading } = useIsLoadingStore();
   const navigate = useNavigate();
 
   const goToDetails = (nw) =>{
-    navigate(`/article/${nw.title}/${nw.publishedAt}`)
+    setSelectedNews(nw)
+    navigate(`/article/${nw.title}`)
   }
   
   return(
