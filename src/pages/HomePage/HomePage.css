@@ -1,8 +1,11 @@
-.home_page{
-    overflow-x: hidden;
-}
 .home_page .card_list_container{
     margin: 0.5rem;
     columns: 5 340px;
     column-gap: 0.5rem;
+}
+
+.home_page .spinner_container{
+    display: flex;
+    justify-content: center;
+    padding: 5rem 0rem;
 }

@@ -1,5 +1,6 @@
-import { BasicPage } from "../BasicPage/BasicPage";
+
 import  pageNotFound  from '../../assets/pageNotFound.svg';
+import { BasicPage } from '../../layout/BasicPage/BasicPage';
 import './ErrorPage.css';
 
 export const ErrorPage = ( ) => {  
