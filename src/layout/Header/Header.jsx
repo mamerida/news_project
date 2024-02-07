@@ -1,6 +1,7 @@
 import React from 'react';
 import newsPaperlogo from '../../assets/newsPaper.svg';
 import './Header.css';
+import { WebName } from '../../components/WebName/WebName';
 
 
 export const Header = ({children}) => {
@@ -9,7 +10,7 @@ export const Header = ({children}) => {
         <header className='header'>
             <div className='header_logo_container'>
                 <img src={newsPaperlogo} alt='logo' className='header_logo'/>
-                <h1 className='header_title'>What's New?</h1>
+                <WebName/>
             </div>
             <div className='header_form_container'>
                 {children}

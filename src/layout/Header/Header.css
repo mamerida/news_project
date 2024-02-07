@@ -1,6 +1,5 @@
 .header{
     background-color: var(--primaryBackgroundColor);
-    width: 100%;
     position: sticky;
     display: flex;
     align-items: center;

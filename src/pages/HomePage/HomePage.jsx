@@ -5,6 +5,7 @@ import { useNewsStore } from '../../store/newsStore';
 import { useIsLoadingStore } from '../../store/isLoading';
 import { Card } from '../../components/Card/Card';
 import './HomePage.css';
+import { Footer } from '../../layout/Footer/Footer';
 
 export const HomePage = () => {
   const { news } = useNewsStore();
@@ -25,6 +26,7 @@ export const HomePage = () => {
           }
           </section>
       </section>
+      <Footer/>
     </>
   )
 }
