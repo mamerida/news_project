@@ -1,6 +1,6 @@
 import React from 'react';
 import './Article.css';
-import notAvalilableImage from '../../assets/image-not-available.svg';
+import notAvalilableImage from '../../assets/imageNotAvailable.svg';
 
 export const Article = ({urlImage ,title, description, url, content, author}) => {
   return (
