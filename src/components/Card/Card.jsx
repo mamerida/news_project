@@ -1,6 +1,6 @@
 import React from 'react';
 import './Card.css';
-import notAvalilableImage from '../../assets/image-not-available.svg';
+import notAvalilableImage from '../../assets/imageNotAvailable.svg';
 
 const AUTHOR_NOT_AVAILABLE = "Author not available"
 

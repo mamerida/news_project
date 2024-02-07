@@ -77,6 +77,7 @@ export const NewsForm = () => {
             setNews(res)
         }).catch(()=>{
             window.alert(ERROR_MESSAGE)
+            setNews([])
         }).finally(()=>{
             setIsLoading(false);
         })
