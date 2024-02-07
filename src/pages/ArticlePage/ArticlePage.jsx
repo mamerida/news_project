@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import { useNewsStore } from '../../store/newsStore';
 import './ArticlePage.css';
 import { Article } from '../../layout/Article/Article';
+import { BasicPage } from '../BasicPage/BasicPage';
 
 export const ArticlePage = () => {
     const [articleToShow, setArticleToShow] = useState({})
@@ -15,8 +16,7 @@ export const ArticlePage = () => {
         setArticleToShow(news.find((nw)=> (nw.title === title && nw.publishedAt === publishedAt)))
     },[])
     return (
-        <>
-            <Header/>
+        <BasicPage>
             <section className='article_wrapper'>
                 <Article  
                     urlImage={articleToShow.urlToImage} 
@@ -27,7 +27,6 @@ export const ArticlePage = () => {
                     author={articleToShow.author}
                 />
             </section>
-            <Footer/>
-        </>
+        </BasicPage>
     )
 }
