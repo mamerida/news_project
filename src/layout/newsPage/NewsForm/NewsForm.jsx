@@ -28,7 +28,7 @@ export const NewsForm = () => {
     const [temporalFilters, setTemporalFilters] = useState({})
     //manage show and hide filter menu
     const [openFilters, setOpenFilters] = useState(false);
-    const {setNews} = useNewsStore()
+    const {news ,setNews} = useNewsStore()
     const {setIsLoading} = useIsLoadingStore()
 
     const handleShowfilters = () =>{
@@ -81,6 +81,7 @@ export const NewsForm = () => {
     },[optionsToSeach, setNews])
 
     useEffect(()=>{
+        if(news.length === 0)
         submitForm();
     },[])
 
