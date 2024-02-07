@@ -26,7 +26,7 @@ export const HomePage = () => {
           {isLoading ? <div className='spinner_container'><Spinner/></div> :
             <section className='card_list_container'>
               {news && news.map((nw)=>{
-                return <div key={nw.url} onClick={()=>{goToDetails(nw)}}>
+                return <div key={nw.url+nw.title+nw.author} onClick={()=>{goToDetails(nw)}}>
                 <Card 
                   title={nw.title} 
                   author={nw.author} 
