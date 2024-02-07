@@ -28,7 +28,7 @@ export const HomePage = () => {
               <div className='spinner_container'><Spinner/></div> 
             :
               <>
-                {(!news || news.length === 0) ?
+                {( !news || news.length === 0 ) ?
                   <>
                     <NothingHere/>
                   </>
