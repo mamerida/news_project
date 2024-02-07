@@ -8,7 +8,11 @@ export const setFiltersInLocalStorage = (value) =>{
 }
 
 export const getFiltersInLocalStorage = () =>{
-     return JSON.parse(LocalStorage.getItems(KEY_LOCAL_STORAGE))
+    if(LocalStorage.getItems(KEY_LOCAL_STORAGE)){
+        return JSON.parse(LocalStorage.getItems(KEY_LOCAL_STORAGE))
+    }else{
+        return null
+    }
 }
 
 export const clearFiltersInLocalStorage = () =>{
