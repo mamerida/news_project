@@ -17,7 +17,7 @@ import { FilterMenu } from '../FilterMenu/FilterMenu';
 import { Api } from '../../../utils/newsApi/calls';
 import { useNewsStore } from '../../../store/newsStore'
 import { useIsLoadingStore } from '../../../store/isLoading';
-import { getFiltersInLocalStorage, setFiltersInLocalStorage } from '../../../utils/newsApi/filterLocalStorage';
+import { clearFiltersInLocalStorage, getFiltersInLocalStorage, setFiltersInLocalStorage } from '../../../utils/newsApi/filterLocalStorage';
 
 
 export const NewsForm = () => {
@@ -38,9 +38,6 @@ export const NewsForm = () => {
     }
 
     const onChangeText = (e) =>{
-        setTemporalFilters((current)=>{
-            return {...current, [TEXT_SEARCH]:e.target.value}
-        })
         setOptionsToSeach((current)=>{
             return {...current, [TEXT_SEARCH]:e.target.value}
         })
@@ -59,14 +56,19 @@ export const NewsForm = () => {
     },[temporalFilters, setOptionsToSeach, handleShowfilters, optionsToSeach])
 
     const clearFilters = useCallback(()=>{
-        const newInitialState = INITIAL_STATE
-        newInitialState[LANGUAGE] = []
-        newInitialState[CATEGORY] = []
-        newInitialState[COUNTRY] = []
-        setOptionsToSeach(newInitialState)
-        setTemporalFilters(newInitialState)
+        const newInitialState = INITIAL_STATE;
+        newInitialState[LANGUAGE] = [];
+        newInitialState[CATEGORY] = [];
+        newInitialState[COUNTRY] = [];
+        //clear the state 
+        setOptionsToSeach(newInitialState);
+        // turnoff the flag
         setFilterAreAplicated(false);
-    },[setTemporalFilters, setOptionsToSeach, setFilterAreAplicated])
+        //close modal
+        setOpenFilters((current)=>!current);
+        //clear localHost
+        clearFiltersInLocalStorage();
+    },[setTemporalFilters, setOptionsToSeach, setFilterAreAplicated, setOpenFilters])
 
 
     const callApi = (parameters) =>{
@@ -88,9 +90,9 @@ export const NewsForm = () => {
 
     useEffect(()=>{
         let filters = getFiltersInLocalStorage();
-        if (filters && (news && news.length === 0)) {
+        if (filters) {
             setOptionsToSeach(filters);
-            callApi(filters);
+            if((news && news.length === 0)) callApi(filters);
         }
     },[])
 
