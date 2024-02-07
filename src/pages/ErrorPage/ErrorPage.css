@@ -1,0 +1,17 @@
+.error_wrapper{
+    padding: 0 0 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 55vh;
+}
+
+.error_wrapper > img{
+    width: 50%;
+    height: auto;
+}
+
+.error_wrapper > h2{
+    padding: 0px 10px;
+}

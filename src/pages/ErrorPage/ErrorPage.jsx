@@ -1,15 +1,19 @@
 import { useRouteError } from "react-router-dom";
+import { Header } from '../../layout/Header/Header';
+import { Footer } from '../../layout/Footer/Footer';
+import  pageNotFound  from '../../assets/pageNotFound.svg';
+import './ErrorPage.css';
 
 export const ErrorPage = ( ) => {
     const error = useRouteError();
   
     return (
       <div id="error-page">
-        <h1>Oops!</h1>
-        <p>Sorry, an unexpected error has occurred.</p>
-        <p>
-          <i>{error.statusText || error.message}</i>
-        </p>
+        <Header/>
+        <section className='error_wrapper'>
+            <img src={pageNotFound}/>
+        </section>
+        <Footer/>
       </div>
     );
 }
