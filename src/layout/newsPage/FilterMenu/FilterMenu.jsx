@@ -63,8 +63,8 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
     
     return (
       <section className='filters'>
-          <div className='filter_section'>
-            <form className="filters_form">
+          <section className='filter_section'>
+            <div className="filters_form">
                 <div className='title_container'>
                 <h2>Filters</h2>
                 <Button
@@ -161,8 +161,8 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                         />
                     </div>
                 </div>
-            </form>
-          </div>
+            </div>
+          </section>
       </section>
     )
   }

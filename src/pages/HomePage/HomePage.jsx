@@ -1,12 +1,11 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm'
-import { Header } from '../../layout/Header/Header'
 import { useNewsStore } from '../../store/newsStore';
 import { useIsLoadingStore } from '../../store/isLoading';
 import { Card } from '../../components/Card/Card';
 import './HomePage.css';
-import { Footer } from '../../layout/Footer/Footer';
 import { useNavigate } from 'react-router-dom';
+import { BasicPage } from '../BasicPage/BasicPage';
 
 export const HomePage = () => {
   const { news } = useNewsStore();
@@ -18,10 +17,7 @@ export const HomePage = () => {
   }
   
   return(
-    <>
-      <Header>
-        <NewsForm/>
-      </Header>
+    <BasicPage headerChildren={<NewsForm/>}>
       <section className='home_page'>
           <section className='card_list_container'>
           {isLoading ? <div>CARGANDO</div> :
@@ -40,7 +36,6 @@ export const HomePage = () => {
           }
           </section>
       </section>
-      <Footer/>
-    </>
+    </BasicPage>
   )
 }
