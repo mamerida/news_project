@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Header } from '../../layout/Header/Header';
 import { Footer } from '../../layout/Footer/Footer';
-import { useParams } from 'react-router-dom';
 import { useNewsStore } from '../../store/newsStore';
 import './ArticlePage.css';
 import { Article } from '../../layout/Article/Article';
@@ -10,12 +9,15 @@ import { BasicPage } from '../../layout/BasicPage/BasicPage';
 
 export const ArticlePage = () => {
     const [articleToShow, setArticleToShow] = useState({})
-    const { news } = useNewsStore();
-    const { title, publishedAt } = useParams();
+    const { selectedNew , clearSelectedNew } = useNewsStore();
     
     useEffect(()=>{
-        setArticleToShow(news.find((nw)=> (nw.title === title && nw.publishedAt === publishedAt)))
+        if(selectedNew) setArticleToShow(selectedNew)
+        return () => {
+            clearSelectedNew()
+          }
     },[])
+    
     return (
         <BasicPage>
             <section className='article_wrapper'>
