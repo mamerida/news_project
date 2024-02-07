@@ -6,10 +6,17 @@ import { useIsLoadingStore } from '../../store/isLoading';
 import { Card } from '../../components/Card/Card';
 import './HomePage.css';
 import { Footer } from '../../layout/Footer/Footer';
+import { useNavigate } from 'react-router-dom';
 
 export const HomePage = () => {
   const { news } = useNewsStore();
   const { isLoading } = useIsLoadingStore();
+  const navigate = useNavigate();
+
+  const goToDetails = (nw) =>{
+    navigate(`/article/${nw.title}/${nw.publishedAt}`)
+  }
+  
   return(
     <>
       <Header>
@@ -20,13 +27,14 @@ export const HomePage = () => {
           {isLoading ? <div>CARGANDO</div> :
             <>
               {news && news.map((nw)=>{
-                return <Card 
-                          key={nw.title +"&"+ nw.publishedAt +"&"+nw.author} 
-                          title={nw.title} 
-                          author={nw.author} 
-                          urlImage={nw.urlToImage} 
-                          description={nw.description}
-                          />
+                return <div key={nw.url} onClick={()=>{goToDetails(nw)}}>
+                <Card 
+                  title={nw.title} 
+                  author={nw.author} 
+                  urlImage={nw.urlToImage} 
+                  description={nw.description}
+                />
+                </div>
               })}
             </> 
           }

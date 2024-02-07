@@ -1,0 +1,36 @@
+.article_wrapper .article_container{
+    margin-top: 10px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+@media only screen and (width > 500px) {
+    .article_wrapper .article_container{
+        width: 60%;
+    }
+
+    .article_wrapper .article_container > img{
+        width: 70%;
+    }
+    
+}
+
+.article_wrapper .article_container > hr{
+    width: 100%
+}
+
+.article_wrapper .article_container > img{
+    align-self: center;
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+}
+
+.article_wrapper .article_container .author_section{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
