@@ -17,6 +17,7 @@ import { FilterMenu } from '../FilterMenu/FilterMenu';
 import { Api } from '../../../utils/newsApi/calls';
 import { useNewsStore } from '../../../store/newsStore'
 import { useIsLoadingStore } from '../../../store/isLoading';
+import { getFiltersInLocalStorage, setFiltersInLocalStorage } from '../../../utils/newsApi/filterLocalStorage';
 
 
 export const NewsForm = () => {
@@ -68,21 +69,29 @@ export const NewsForm = () => {
     },[setTemporalFilters, setOptionsToSeach, setFilterAreAplicated])
 
 
-
-    const submitForm = useCallback(()=>{
+    const callApi = (parameters) =>{
         setIsLoading(true);
-        Api.getNews(optionsToSeach).then(res=>{
+        Api.getNews(parameters).then(res=>{
             setNews(res)
         }).catch(()=>{
             window.alert(ERROR_MESSAGE)
         }).finally(()=>{
             setIsLoading(false);
         })
-    },[optionsToSeach, setNews])
+    }
+
+    const submitForm = useCallback(()=>{
+        setIsLoading(true);
+        setFiltersInLocalStorage(optionsToSeach);
+        callApi(optionsToSeach);
+    },[optionsToSeach, setNews, callApi])
 
     useEffect(()=>{
-        if(news.length === 0)
-        submitForm();
+        let filters = getFiltersInLocalStorage();
+        if (filters && (news && news.length === 0)) {
+            setOptionsToSeach(filters);
+            callApi(filters);
+        }
     },[])
 
     return (

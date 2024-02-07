@@ -72,10 +72,9 @@ export const EVERYTHING_OPTION = "everything"
 export const ERROR_MESSAGE = "Error getting news"
 export const EXCLUDE_DOMAINS = "excludeDomains"
 export const FROM_DATE = "from"
-export const REACT_SHOW = "react"
 export const INITIAL_STATE = {
     endpoint:EVERYTHING_OPTION ,
-    q:REACT_SHOW,
+    q:"",
     excludeDomains:"",
     domains:"",
     excludeDomains:"",

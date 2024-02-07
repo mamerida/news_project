@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Header } from '../../layout/Header/Header';
-import { Footer } from '../../layout/Footer/Footer';
 import { useNewsStore } from '../../store/newsStore';
 import './ArticlePage.css';
 import { Article } from '../../layout/Article/Article';
@@ -12,6 +10,7 @@ export const ArticlePage = () => {
     const { selectedNew , clearSelectedNew } = useNewsStore();
     
     useEffect(()=>{
+        window.scrollTo(0, 0);
         if(selectedNew) setArticleToShow(selectedNew)
         return () => {
             clearSelectedNew()
