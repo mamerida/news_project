@@ -5,7 +5,8 @@ import { useParams } from 'react-router-dom';
 import { useNewsStore } from '../../store/newsStore';
 import './ArticlePage.css';
 import { Article } from '../../layout/Article/Article';
-import { BasicPage } from '../BasicPage/BasicPage';
+import { BasicPage } from '../../layout/BasicPage/BasicPage';
+
 
 export const ArticlePage = () => {
     const [articleToShow, setArticleToShow] = useState({})

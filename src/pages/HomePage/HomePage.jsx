@@ -5,7 +5,9 @@ import { useIsLoadingStore } from '../../store/isLoading';
 import { Card } from '../../components/Card/Card';
 import './HomePage.css';
 import { useNavigate } from 'react-router-dom';
-import { BasicPage } from '../BasicPage/BasicPage';
+import { BasicPage } from '../../layout/BasicPage/BasicPage';
+import { Spinner } from '../../components/Spinner/Spinner';
+
 
 export const HomePage = () => {
   const { news } = useNewsStore();
@@ -19,9 +21,9 @@ export const HomePage = () => {
   return(
     <BasicPage headerChildren={<NewsForm/>}>
       <section className='home_page'>
-          <section className='card_list_container'>
-          {isLoading ? <div>CARGANDO</div> :
-            <>
+          <>
+          {isLoading ? <div className='spinner_container'><Spinner/></div> :
+            <section className='card_list_container'>
               {news && news.map((nw)=>{
                 return <div key={nw.url} onClick={()=>{goToDetails(nw)}}>
                 <Card 
@@ -32,9 +34,9 @@ export const HomePage = () => {
                 />
                 </div>
               })}
-            </> 
+            </section> 
           }
-          </section>
+          </>
       </section>
     </BasicPage>
   )
