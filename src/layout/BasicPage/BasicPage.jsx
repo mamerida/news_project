@@ -1,7 +1,7 @@
-import React from 'react'
-import './BasicPage.css'
-import { Footer } from '../../layout/Footer/Footer'
-import { Header } from '../../layout/Header/Header'
+import React from 'react';
+import './BasicPage.css';
+import { Footer } from '../../layout/Footer/Footer';
+import { Header } from '../../layout/Header/Header';
 
 export const BasicPage = ({headerChildren, children}) => {
   return (

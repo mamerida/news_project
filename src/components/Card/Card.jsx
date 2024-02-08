@@ -2,18 +2,25 @@ import React, { useState } from 'react';
 import './Card.css';
 import notAvalilableImage from '../../assets/imageNotAvailable.svg';
 
-const AUTHOR_NOT_AVAILABLE = "Author not available"
+const AUTHOR_NOT_AVAILABLE = "Author not available";
 
+/**
+ * Cards to view a new resume.
+ * @param {string} title - title of the new.
+ * @param {string} author - title of the new.
+ * @param {string} urlImage - provide a head of th card. If are null replace with placeholder.
+ * @param {string} urlImage - provide a head of th card. If are null replace with placeholder.
+ * @param {string} description - indicates type of button and change css.
+ */
 export const Card = ({title, author, urlImage, description}) => {
-  const [loaded, setLoaded] = useState(false);
+
   return (
-    <section className='card_container' style={loaded ? {} : {display:"none"}}>
+    <section className='card_container' >
       <div className='card'>
         <header className='card_header'>
           <img
             src={urlImage || notAvalilableImage}
             alt='card_cover'
-            onLoad={()=>setLoaded(true)}
           />
         </header>
         <section className='card_content'>

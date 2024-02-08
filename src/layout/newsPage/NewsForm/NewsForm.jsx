@@ -1,13 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { FaSearch } from "react-icons/fa";
-import { LiaFilterSolid } from "react-icons/lia";
-import { FaFilter } from "react-icons/fa";
+import { FaSearch } from 'react-icons/fa';
+import { LiaFilterSolid } from 'react-icons/lia';
+import { FaFilter } from 'react-icons/fa';
 import { Input } from '../../../components/Input/Input';
 import { Button } from '../../../components/Button/Button';
 import { 
     CATEGORY,
     COUNTRY,
-    ERROR_MESSAGE,
     INITIAL_STATE, 
     LANGUAGE,  
     TEXT_SEARCH, 
@@ -15,9 +14,13 @@ import {
 import './NewsForm.css';
 import { FilterMenu } from '../FilterMenu/FilterMenu';
 import { Api } from '../../../utils/newsApi/calls';
-import { useNewsStore } from '../../../store/newsStore'
+import { useNewsStore } from '../../../store/newsStore';
 import { useIsLoadingStore } from '../../../store/isLoading';
-import { clearFiltersInLocalStorage, getFiltersInLocalStorage, setFiltersInLocalStorage } from '../../../utils/newsApi/filterLocalStorage';
+import { 
+    clearFiltersInLocalStorage, 
+    getFiltersInLocalStorage, 
+    setFiltersInLocalStorage 
+} from '../../../utils/newsApi/filterLocalStorage';
 
 
 export const NewsForm = () => {
@@ -26,31 +29,31 @@ export const NewsForm = () => {
     //that state indicate if are filters applied
     const [filterAreAplicated, setFilterAreAplicated] = useState(false);
     //this state save the filters meanwhile are editing
-    const [temporalFilters, setTemporalFilters] = useState({})
+    const [temporalFilters, setTemporalFilters] = useState({});
     //manage show and hide filter menu
     const [openFilters, setOpenFilters] = useState(false);
-    const {news ,setNews} = useNewsStore()
-    const {setIsLoading} = useIsLoadingStore()
+    const {news ,setNews} = useNewsStore();
+    const {setIsLoading} = useIsLoadingStore();
 
     const handleShowfilters = () =>{
-        setOpenFilters((current)=>!current)
-        setTemporalFilters(optionsToSeach)
+        setOpenFilters((current)=>!current);
+        setTemporalFilters(optionsToSeach);
     }
 
     const onChangeText = (e) =>{
         setOptionsToSeach((current)=>{
             return {...current, [TEXT_SEARCH]:e.target.value}
-        })
+        });
     }
 
     const handleChangeFilters = useCallback((value,field)=>{
         setTemporalFilters((current)=>{
             return {...current, [field]:value}
-        })
+        });
     },[setTemporalFilters])
 
     const onSubmitFilterForm = useCallback(()=>{
-        setOptionsToSeach(temporalFilters)
+        setOptionsToSeach(temporalFilters);
         handleShowfilters();
         setFilterAreAplicated(true);
     },[temporalFilters, setOptionsToSeach, handleShowfilters, optionsToSeach])
@@ -75,10 +78,10 @@ export const NewsForm = () => {
         setIsLoading(true);
         Api.getNews(parameters)
         .then(res=>{
-            setNews(res.articles)
+            setNews(res.articles);
         }).catch((e)=>{
-            alert(e)
-            setNews([])
+            alert(e);
+            setNews([]);
         }).finally(()=>{
             setIsLoading(false);
         })
@@ -110,13 +113,14 @@ export const NewsForm = () => {
             <Button icon={filterAreAplicated ?  <FaFilter /> :<LiaFilterSolid />} type="clear" onClick={handleShowfilters} />
             <Button icon={<FaSearch />} type="primary"  label="Search" onClick={submitForm} disabled={optionsToSeach[TEXT_SEARCH] === ""}/>
            {openFilters && 
-            <FilterMenu 
-                onSubmit={onSubmitFilterForm} 
-                onCancel={handleShowfilters} 
-                values={temporalFilters} 
-                onChange={handleChangeFilters}
-                onClear={clearFilters}
-            /> }
+                <FilterMenu 
+                    onSubmit={onSubmitFilterForm} 
+                    onCancel={handleShowfilters} 
+                    values={temporalFilters} 
+                    onChange={handleChangeFilters}
+                    onClear={clearFilters}
+                /> 
+            }
         </form>
     )
 }

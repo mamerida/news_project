@@ -1,5 +1,5 @@
-import React from 'react'
-import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm'
+import React from 'react';
+import { NewsForm } from '../../layout/newsPage/NewsForm/NewsForm';
 import { useNewsStore } from '../../store/newsStore';
 import { useIsLoadingStore } from '../../store/isLoading';
 import { Card } from '../../components/Card/Card';
@@ -16,8 +16,8 @@ export const HomePage = () => {
   const navigate = useNavigate();
 
   const goToDetails = (nw) =>{
-    setSelectedNews(nw)
-    navigate(`/news_project/article/${nw.title}`)
+    setSelectedNews(nw);
+    navigate(`/news_project/article/${nw.title}`);
   }
   
   return(

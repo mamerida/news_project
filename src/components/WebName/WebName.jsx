@@ -1,5 +1,5 @@
 import React from 'react';
-import "./WebName.css";
+import './WebName.css';
 
 export const WebName = () => {
   return (
