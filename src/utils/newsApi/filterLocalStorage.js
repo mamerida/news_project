@@ -16,5 +16,5 @@ export const getFiltersInLocalStorage = () =>{
 }
 
 export const clearFiltersInLocalStorage = () =>{
-    return JSON.parse(LocalStorage.clearLocalStorage())
+    return LocalStorage.clearLocalStorage()
 }
