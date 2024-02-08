@@ -10,6 +10,11 @@ export const router = createBrowserRouter([
       errorElement:<ErrorPage />
     },
     {
+      path: "/news_project/",
+      element: <HomePage/>,
+      errorElement:<ErrorPage />
+    },
+    {
       path: "/article/:title",
       element: <ArticlePage/>,
       errorElement:<ErrorPage />
