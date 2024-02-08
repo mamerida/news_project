@@ -3,7 +3,6 @@ import { Button } from '../../components/Button/Button'
 import { WebName } from '../../components/WebName/WebName'
 import { AiOutlineGithub } from "react-icons/ai";
 import { FaArrowUp } from "react-icons/fa";
-
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import './Footer.css';
 

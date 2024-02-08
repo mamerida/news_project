@@ -10,7 +10,7 @@ export const Header = ({children}) => {
     const navigate = useNavigate();
 
     const goToHomePage = () =>{
-        navigate("/news_project/")
+        navigate("/news_project/");
     }
 
     return (

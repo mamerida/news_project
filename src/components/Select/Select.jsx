@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import "./Select.css"
-
-const defaultEmptyOption = [{value:"", label:"Select an option please"}];
-
+import './Select.css'
 
 /**
- * Select to the platform.
+ * platform Select.
  * @param {Object[]} options - The options to select.
  * @param {string} options.value - Value of the select, value to use when the option are seleted
  * @param {string} options.label - String to show in select.

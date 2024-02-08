@@ -1,10 +1,10 @@
 import React from 'react';
 import './Input.css';
 
-const ENTER_KEY = "Enter"
+const ENTER_KEY = "Enter";
 
 /**
- * Select to the platform.
+ *  Platform Input.
  * @param {string="text"} type - Type of input. number, text, password, mail, etc.
  * @param {string} placeholder - input placeholder.
  * @param {string} label - label to show on input.

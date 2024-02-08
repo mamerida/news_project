@@ -6,15 +6,16 @@ import { BasicPage } from '../../layout/BasicPage/BasicPage';
 
 
 export const ArticlePage = () => {
-    const [articleToShow, setArticleToShow] = useState({})
+    const [articleToShow, setArticleToShow] = useState({});
     const { selectedNew , clearSelectedNew } = useNewsStore();
     
     useEffect(()=>{
         window.scrollTo(0, 0);
-        if(selectedNew) setArticleToShow(selectedNew)
+        if(selectedNew) setArticleToShow(selectedNew);
         return () => {
             clearSelectedNew()
-          }
+        }
+
     },[])
     
     return (

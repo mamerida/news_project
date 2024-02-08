@@ -3,7 +3,7 @@ import './Button.css';
 
 
 /**
- * Select to the platform.
+ * Buttons to the platform.
  * @param {JSX.Element} icon - If you want you can show an icon betwen de text .
  * @param {string} label - button label.
  * @callback onClick - action to execute when click the button.
