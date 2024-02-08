@@ -84,9 +84,10 @@ export const NewsForm = () => {
     }
 
     const submitForm = useCallback(()=>{
-        setIsLoading(true);
-        setFiltersInLocalStorage(optionsToSeach);
-        callApi(optionsToSeach);
+        // setIsLoading(true);
+        console.log(optionsToSeach)
+        // setFiltersInLocalStorage(optionsToSeach);
+        // callApi(optionsToSeach);
     },[optionsToSeach, setNews, callApi])
 
     useEffect(()=>{

@@ -16,7 +16,7 @@ const defaultEmptyOption = [{value:"", label:"Select an option please"}];
  * @param {bool} multiple - indicate if the select is multiple.
  * @param {boolean=true} emptyOption - that prop add a empty option in the select .
  */
-export const Select = ({options = [],label = "", name, value, onChange, multiple=false, emptyOption=false}) => {
+export const Select = ({options = [],label = "", name, value, onChange, emptyOption=false}) => {
 
     return (
     <>  
@@ -25,8 +25,7 @@ export const Select = ({options = [],label = "", name, value, onChange, multiple
             name={name} 
             onChange={onChange} 
             value={value} 
-            className={`inputs custom_select ${multiple ? "select_multi" :"select_single"}`}
-            multiple={multiple}
+            className={"inputs custom_select select_single"}
         >   
             {emptyOption && <option value={""}>Select an option please</option> }
             {options.map((opt)=>{

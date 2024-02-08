@@ -42,7 +42,7 @@ const buildURL = (url:string, parameters: EverythingParams | TopParams) =>{
     let finalUrl = url;
     for(const param in parameters){
         if( param === LANGUAGE || param === COUNTRY || param === CATEGORY ){
-            if(parameters[param].length > 0) finalUrl += "&" + param +"="+ arrayConverterToProps(parameters[param])
+            if(parameters && parameters[param] && parameters[param].length > 0) finalUrl += "&" + param +"="+ arrayConverterToProps(parameters[param])
         }else{
             if(parameters[param] !== "") finalUrl += "&" + param +"="+ parameters[param]
         }
