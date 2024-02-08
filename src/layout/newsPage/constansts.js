@@ -110,7 +110,7 @@ export const SHORT_BY_OPTIONS = [
 export const SORT_BY = "sortBy"
 export const TO_DATE= "to"
 export const TOP_HEAD_OPTION = "top-headlines"
-export const ENDPOINT_OPTION = [{label : "Everythig",value:EVERYTHING_OPTION},{label : "Top headlines",value:TOP_HEAD_OPTION}]
+export const ENDPOINT_OPTION = [{label : "Everything",value:EVERYTHING_OPTION},{label : "Top headlines",value:TOP_HEAD_OPTION}]
 export const TEXT_SEARCH = "q"
 
 
