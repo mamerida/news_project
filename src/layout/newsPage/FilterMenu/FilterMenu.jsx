@@ -105,6 +105,7 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                         <Input
                             label="From"
                             type="date"
+                            placeholder="12/12/2023"
                             min={DATE_LIMIT}
                             value={values[FROM_DATE]}
                             max={values[TO_DATE]}
@@ -113,6 +114,7 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                         <Input
                             label="To"
                             type="date"
+                            placeholder="15/12/2023"
                             min={values[FROM_DATE]}
                             value={values[TO_DATE]}
                             onChange={(e)=>handleChangeValue(e,TO_DATE)}
