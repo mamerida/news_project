@@ -24,6 +24,7 @@ import {
     TO_DATE 
 } from "../constansts";
 import { Input } from "../../../components/Input/Input";
+import { SelectMulti } from "../../../components/SelectMulti/SelectMulti";
 
 /**
  * Select to the platform.
@@ -45,20 +46,14 @@ import { Input } from "../../../components/Input/Input";
  */
 
 export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
-
+    
     const handleChangeValue = useCallback((e,field) => {
         onChange(e.target.value, field)
       },[values, onChange])
     
     const manageMultiSelect = useCallback((value,field)=>{
-        const selectedValues = values[field]
-        const indexOption = selectedValues.indexOf(value)
-        if(indexOption === -1){
-            selectedValues.push(value)
-        }else{
-            selectedValues.splice(indexOption,1)
-        }
-        onChange(selectedValues, field)
+        const result = value.map(val=> val.value)
+        onChange(result, field)
     },[values, onChange])
     
     return (
@@ -119,31 +114,26 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                             value={values[TO_DATE]}
                             onChange={(e)=>handleChangeValue(e,TO_DATE)}
                         />
-                        <Select
-                            label="Select language"
-                            multiple
-                            name={LANGUAGE}
+                        <SelectMulti
                             options={LANGUAGE_OPTION}
-                            value={values[LANGUAGE]}
-                            onChange={(e)=>{manageMultiSelect(e.target.value,LANGUAGE)}}
+                            label="Select language"
+                            value={LANGUAGE_OPTION.filter(option => values[LANGUAGE].includes(option.value))}
+                            onChange={(e)=>{manageMultiSelect(e,LANGUAGE)}}
                         />
                     </>
                     :
                     <>
-                        <Select
-                            label="Select Category"
-                            multiple
+                        <SelectMulti
+                            label="Select category"
                             options={CATEGORY_OPTIONS}
-                            name={CATEGORY}
-                            value={values[CATEGORY]}
-                            onChange={(e)=>manageMultiSelect(e.target.value,CATEGORY)}
+                            value={CATEGORY_OPTIONS.filter(option => values[CATEGORY].includes(option.value))}
+                            onChange={(e)=>{manageMultiSelect(e,CATEGORY)}}
                         />
-                        <Select
-                            label="Select Country"
-                            multiple
+                        <SelectMulti
+                            label="Select country"
                             options={COUNTRY_OPTIONS}
-                            value={values[COUNTRY]}
-                            onChange={(e)=>manageMultiSelect(e.target.value,COUNTRY)}
+                            value={COUNTRY_OPTIONS.filter(option => values[COUNTRY].includes(option.value))}
+                            onChange={(e)=>{manageMultiSelect(e,COUNTRY)}}
                         />
                     </>
                 }
