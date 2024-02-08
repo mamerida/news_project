@@ -17,7 +17,7 @@ export const HomePage = () => {
 
   const goToDetails = (nw) =>{
     setSelectedNews(nw)
-    navigate(`/article/${nw.title}`)
+    navigate(`/news_project/article/${nw.title}`)
   }
   
   return(
