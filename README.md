@@ -1,12 +1,71 @@
-# React + Vite
+<h2 align="center" News Project <br/> </h2> 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About Project :clipboard:
 
-Currently, two official plugins are available:
+This project consumes [News Api]([http://www.boredapi.com/](https://newsapi.org/)). With it, you can see a selection of news, search by applying filters, and navigate to a specific one.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-- docker build --build-arg VITE_API_KEY=https://example.com -t react-nginx-app .
 
--  docker run -p 8080:80 react-nginx-app
+
+## Tecnologies ⚙️
+
+
+[![CircleCi](https://skillicons.dev/icons?i=codepen&perline=3)](https://app.circleci.com/pipelines/github/mamerida/news_project) To Continuous Integration I used CircleCi 
+
+
+ [![Test](https://skillicons.dev/icons?i=jest&perline=3)](https://skillicons.dev) Jest for test
+
+[![Deploy](https://skillicons.dev/icons?i=githubactions&perline=3)](https://mamerida.github.io/news_project/) GH-Page for deploys
+
+
+## Tools 🛠️
+<p align="left">
+<img style="margin: auto;" src="https://raw.githubusercontent.com/sachinverma53121/sachinverma53121/master/icons/js.png" alt=javascript width="50" height="50"/>
+<img style="margin: auto;" src="https://raw.githubusercontent.com/sachinverma53121/sachinverma53121/master/icons/react.png" alt=javascript width="50" height="50"/>
+<img style="margin: auto;" src="https://skillicons.dev/icons?i=vite&perline=3" alt=javascript width="50" height="50"/>
+<img style="margin: auto;" src="https://raw.githubusercontent.com/sachinverma53121/sachinverma53121/master/icons/npm.png" alt=npm width="50" height="50"/>
+<img style="margin: auto;" src="https://raw.githubusercontent.com/sachinverma53121/sachinverma53121/master/icons/node.png" alt=nodejs width="50" height="50"/>
+<img style="margin: auto;" src="https://raw.githubusercontent.com/sachinverma53121/sachinverma53121/master/icons/git.png" alt=git width="50" height="50"/>
+<img style="margin: auto;" src="https://raw.githubusercontent.com/sachinverma53121/sachinverma53121/master/icons/github.png" alt=github width="50" height="50"/>
+<img style="margin: auto;" src="https://skillicons.dev/icons?i=docker&perline=3" alt=javascript width="50" height="50"/>
+
+## Before starting :game_die:
+
+1) create **.env file** in the project root with this format:
+```
+VITE_API_KEY = <your_api_key>
+```
+2) Install/Update node package JSON in your favorite terminal. Execute:
+```
+npm install
+```
+3) To start
+```
+npm run dev
+```
+
+## How to build  <img style="margin: auto;" src="https://skillicons.dev/icons?i=nodejs&perline=3" alt=javascript width="50" height="50"/>
+
+```
+npm run build
+```
+
+## And the deployment?  <img style="margin: auto;" src="https://skillicons.dev/icons?i=github&perline=3" alt=javascript width="50" height="50"/>
+
+```
+npm run deploy
+//This command builds the app and deploys in github-page branch
+```
+
+
+## Docker!!!! <img style="margin: auto;" src="https://skillicons.dev/icons?i=docker&perline=3" alt=javascript width="50" height="50"/>
+
+```
+//With this command create the image 
+  docker build --build-arg VITE_API_KEY=<your_api_key> -t <image_name> .
+```
+
+```
+// hoist the sails in localhost:8080
+  docker run -p 8080:80 <image_name>
+```
