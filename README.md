@@ -2,7 +2,7 @@
 
 ## About Project :clipboard:
 
-This project consumes [News Api]([http://www.boredapi.com/](https://newsapi.org/)). With it, you can see a selection of news, search by applying filters, and navigate to a specific one.
+This project consumes [News Api](https://newsapi.org/). With it, you can see a selection of news, search by applying filters, and navigate to a specific one.
 
 
 
@@ -44,13 +44,12 @@ npm install
 npm run dev
 ```
 
-## How to build  <img style="margin: auto;" src="https://skillicons.dev/icons?i=nodejs&perline=3" alt=javascript width="50" height="50"/>
-
+## <img style="margin: auto;" src="https://skillicons.dev/icons?i=nodejs&perline=3" alt=javascript width="50" height="50"/>  How to build?
 ```
 npm run build
 ```
 
-## And the deployment?  <img style="margin: auto;" src="https://skillicons.dev/icons?i=github&perline=3" alt=javascript width="50" height="50"/>
+## <img style="margin: auto;" src="https://skillicons.dev/icons?i=github&perline=3" alt=javascript width="50" height="50"/>  And the deployment? 
 
 ```
 npm run deploy
@@ -58,7 +57,7 @@ npm run deploy
 ```
 
 
-## Docker!!!! <img style="margin: auto;" src="https://skillicons.dev/icons?i=docker&perline=3" alt=javascript width="50" height="50"/>
+## <img style="margin: auto;" src="https://skillicons.dev/icons?i=docker&perline=3" alt=javascript width="50" height="50"/> Docker!!!!
 
 ```
 //With this command create the image 
