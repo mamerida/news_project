@@ -73,10 +73,11 @@ export const NewsForm = () => {
 
     const callApi = (parameters) =>{
         setIsLoading(true);
-        Api.getNews(parameters).then(res=>{
+        Api.getNews(parameters)
+        .then(res=>{
             setNews(res)
-        }).catch(()=>{
-            window.alert(ERROR_MESSAGE)
+        }).catch((e)=>{
+            alert(e)
             setNews([])
         }).finally(()=>{
             setIsLoading(false);
@@ -84,10 +85,9 @@ export const NewsForm = () => {
     }
 
     const submitForm = useCallback(()=>{
-        // setIsLoading(true);
-        console.log(optionsToSeach)
-        // setFiltersInLocalStorage(optionsToSeach);
-        // callApi(optionsToSeach);
+        setIsLoading(true);
+        setFiltersInLocalStorage(optionsToSeach);
+        callApi(optionsToSeach);
     },[optionsToSeach, setNews, callApi])
 
     useEffect(()=>{

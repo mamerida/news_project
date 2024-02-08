@@ -19,19 +19,19 @@ const defaultEmptyOption = [{value:"", label:"Select an option please"}];
 export const Select = ({options = [],label = "", name, value, onChange, emptyOption=false}) => {
 
     return (
-    <>  
+    <div className='select_single_wrapper'>  
         {label && <label className='select_label'>{label}</label>}
         <select 
             name={name} 
             onChange={onChange} 
             value={value} 
-            className={"inputs custom_select select_single"}
+            className={"inputs custom_select"}
         >   
             {emptyOption && <option value={""}>Select an option please</option> }
             {options.map((opt)=>{
                 return <option key={opt.value} value={opt.value}>{opt.label}</option>
             })}
         </select>
-    </>
+    </div>
     )
 }

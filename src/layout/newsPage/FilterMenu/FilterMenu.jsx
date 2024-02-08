@@ -116,7 +116,7 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                         />
                         <SelectMulti
                             options={LANGUAGE_OPTION}
-                            placeholder="Select language"
+                            label="Select language"
                             value={LANGUAGE_OPTION.filter(option => values[LANGUAGE].includes(option.value))}
                             onChange={(e)=>{manageMultiSelect(e,LANGUAGE)}}
                         />
@@ -124,13 +124,13 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                     :
                     <>
                         <SelectMulti
-                            placeholder="Select category"
+                            label="Select category"
                             options={CATEGORY_OPTIONS}
                             value={CATEGORY_OPTIONS.filter(option => values[CATEGORY].includes(option.value))}
                             onChange={(e)=>{manageMultiSelect(e,CATEGORY)}}
                         />
                         <SelectMulti
-                            placeholder="Select country"
+                            label="Select country"
                             options={COUNTRY_OPTIONS}
                             value={COUNTRY_OPTIONS.filter(option => values[COUNTRY].includes(option.value))}
                             onChange={(e)=>{manageMultiSelect(e,COUNTRY)}}

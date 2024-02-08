@@ -1,12 +1,15 @@
-.custom_select {
+.select_single_wrapper{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.select_single_wrapper .custom_select {
     appearance: none;
     /*  safari  */
     -webkit-appearance: none;
     margin: 10px 0;
     background-color: var(--backgroundColor);
-}
-
-.select_single{
     /* Arrow */
     appearance: none;
     background-image: var(--arrowUrl);
@@ -15,7 +18,6 @@
     background-size: 0.65rem auto;
     color: var(--primaryTextColor);
 }
-
 
 .select_label{
   font-size: 1rem;
