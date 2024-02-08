@@ -119,6 +119,7 @@ export const FilterMenu = ({values, onSubmit, onClear, onCancel, onChange}) => {
                             label="Select language"
                             value={LANGUAGE_OPTION.filter(option => values[LANGUAGE].includes(option.value))}
                             onChange={(e)=>{manageMultiSelect(e,LANGUAGE)}}
+                            menuPlacement="top"
                         />
                     </>
                     :
