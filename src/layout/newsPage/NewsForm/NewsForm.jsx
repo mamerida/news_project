@@ -75,7 +75,7 @@ export const NewsForm = () => {
         setIsLoading(true);
         Api.getNews(parameters)
         .then(res=>{
-            setNews(res)
+            setNews(res.articles)
         }).catch((e)=>{
             alert(e)
             setNews([])

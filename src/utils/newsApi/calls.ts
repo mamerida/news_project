@@ -18,13 +18,14 @@ const BASE_URL = "https://newsapi.org/v2/"
 //@ts-ignore
 const API_KEY_URL= `?apikey=${process.env.VITE_API_KEY}`
 const METHOD_GET = "GET"
+const OK_STATUS = "ok"
 
 
 const callApi = async(url:string ,method:string) =>{
     return fetch(url,{method: method})
     .then(res => res.json())
     .then(res=>{
-        if(!res.ok){
+        if(res.status !== OK_STATUS){
             throw new Error(res.message)
         }else{
             return res
