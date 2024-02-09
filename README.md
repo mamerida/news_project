@@ -68,3 +68,8 @@ npm run deploy
 // hoist the sails in localhost:8080
   docker run -p 8080:80 <image_name>
 ```
+## Nexts steps
+
+- Apply the search by title, description, or content.
+- Apply the filter and search for sources.
+- Cached the calls.
